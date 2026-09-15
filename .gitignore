@@ -41,3 +41,4 @@ _builds/
 # Packaged Helm dependencies produced by `helm dependency update` (subchart
 # sources under charts/ are tracked; the .tgz artifacts are not).
 deploy/helm/**/charts/*.tgz
+deploy/docker/data-dir/
