@@ -92,6 +92,11 @@ gie-unique-id=1
 nvbuf-memory-type=0
 # reuse the profile's RT-DETR detector (classes: background,bicycle,car,person,road_sign)
 config-file=/opt/nvidia/deepstream/deepstream-9.1/sources/apps/sample_apps/metropolis_perception_app/configs/rtdetr-960x544.txt
+# Pin the batch-1 engine so nvinfer DESERIALIZES it (~seconds) instead of rebuilding from
+# ONNX (~5 min) every run. rtdetr-960x544.txt names a b30 engine (for the batch-30 API
+# path); this bypass runs at batch 1, so without this override nvinfer never finds a
+# matching engine and rebuilds each time. Built automatically on first run; reused after.
+model-engine-file=/opt/storage/rtdetr-its/model_epoch_035.fp16.onnx_b1_gpu0_fp16.engine
 
 [tracker]
 enable=1
