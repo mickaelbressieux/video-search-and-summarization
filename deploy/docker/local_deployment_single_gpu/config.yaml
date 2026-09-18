@@ -39,7 +39,7 @@ tools:
   chat_llm:
     type: llm
     params:
-      model: meta/llama-3.1-8b-instruct
+      model: nvidia/nemotron-3.5-lightning
       base_url: "http://host.docker.internal:8007/v1" #FIXME - update url to running LLM Instance
       max_tokens: 2048
       temperature: 0.2
@@ -48,7 +48,7 @@ tools:
   summarization_llm:
     type: llm
     params:
-      model: meta/llama-3.1-8b-instruct
+      model: nvidia/nemotron-3.5-lightning
       base_url: "http://host.docker.internal:8007/v1" #FIXME - update url to running LLM Instance
       max_tokens: 2048
       temperature: 0.2
@@ -57,7 +57,7 @@ tools:
   notification_llm:
     type: llm
     params:
-      model: meta/llama-3.1-8b-instruct
+      model: nvidia/nemotron-3.5-lightning
       base_url: "http://host.docker.internal:8007/v1" #FIXME - update url to running LLM Instance
       max_tokens: 2048
       temperature: 0.2
@@ -66,13 +66,13 @@ tools:
   nvidia_embedding:
     type: embedding
     params:
-      model: nvidia/llama-3.2-nv-embedqa-1b-v2
+      model: nvidia/llama-nemotron-embed-vl-1b-v2
       base_url: "http://host.docker.internal:8006/v1" #FIXME
 
   nvidia_reranker:
     type: reranker
     params:
-      model: nvidia/llama-3.2-nv-rerankqa-1b-v2
+      model: nvidia/llama-nemotron-rerank-vl-1b-v2
       base_url: "http://host.docker.internal:8005/v1" #FIXME - update url to running reranker NIM Instance
 
   notification_tool:
